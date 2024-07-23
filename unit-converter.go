@@ -2,47 +2,52 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 )
 
 func ConvertToCelsius(fahrenheit float64) float64 {
-	return (fahrenheit - 32) * 5 / 9
+	return roundToTwoDecimals((fahrenheit - 32) * 5 / 9)
 }
 
 func ConvertToFahrenheit(celsius float64) float64 {
-	return celsius*9/5 + 32
+	return roundToTwoDecimals(celsius*9/5 + 32)
 }
 
 func ConvertToMiles(kilometers float64) float64 {
-	return kilometers * 0.621371
+	return roundToTwoDecimals(kilometers * 0.621371)
 }
 
 func ConvertToKilometers(miles float64) float64 {
-	return miles * 1.60934
+	return roundToTwoDecimals(miles * 1.60934)
 }
 
 func ConvertToKilograms(pounds float64) float64 {
-	return pounds * 0.453592
+	return roundToTwoDecimals(pounds * 0.453592)
 }
 
 func ConvertToPounds(kilograms float64) float64 {
-	return kilograms * 2.20462
+	return roundToTwoDecimals(kilograms * 2.20462)
 }
 
 func ConvertToLiters(gallons float64) float64 {
-	return gallons * 3.78541
+	return roundToTwoDecimals(gallons * 3.78541)
 }
 
 func ConvertToGallons(liters float64) float64 {
-	return liters * 0.264172
+	return roundToTwoDecimals(liters * 0.264172)
 }
 
 func ConvertToInches(centimeters float64) float64 {
-	return centimeters * 0.393701
+	return roundToTwoDecimals(centimeters * 0.393701)
 }
 
 func ConvertToCentimeters(inches float64) float64 {
-	return inches * 2.54
+	return roundToTwoDecimals(inches * 2.54)
+}
+
+func roundToTwoDecimals(num float64) float64 {
+	return math.Round(num*100) / 100
 }
 
 func getUserInput(message string) string {
