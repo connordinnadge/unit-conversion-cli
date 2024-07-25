@@ -51,7 +51,7 @@ func roundToTwoDecimals(num float64) float64 {
 	return math.Round(num*100) / 100
 }
 
-func performConversion(prompt string, conversionFunc func(float64) float64, inputUnit string, outputUnit string) {
+func PerformConversion(prompt string, conversionFunc func(float64) float64, inputUnit string, outputUnit string) {
 	input := ui.GetUserInput(prompt)
 	value, err := strconv.ParseFloat(input, 64)
 	if err != nil {
@@ -62,7 +62,7 @@ func performConversion(prompt string, conversionFunc func(float64) float64, inpu
 	ui.DisplayResult(value, inputUnit, result, outputUnit)
 }
 
-func weightConversion() {
+func WeightConversion() {
 	fmt.Println("Please select an option:")
 	fmt.Println("1. Pounds to Kilograms")
 	fmt.Println("2. Kilograms to Pounds")
@@ -71,15 +71,15 @@ func weightConversion() {
 
 	switch choice {
 	case "1":
-		performConversion("Enter the weight in pounds: ", ConvertToKilograms, "pounds", "kilograms")
+		PerformConversion("Enter the weight in pounds: ", ConvertToKilograms, "pounds", "kilograms")
 	case "2":
-		performConversion("Enter the weight in kilograms: ", ConvertToPounds, "kilograms", "pounds")
+		PerformConversion("Enter the weight in kilograms: ", ConvertToPounds, "kilograms", "pounds")
 	default:
 		fmt.Println("Invalid choice")
 	}
 }
 
-func volumeConversion() {
+func VolumeConversion() {
 	fmt.Println("Please select an option:")
 	fmt.Println("1. Gallons to Liters")
 	fmt.Println("2. Liters to Gallons")
@@ -88,15 +88,15 @@ func volumeConversion() {
 
 	switch choice {
 	case "1":
-		performConversion("Enter the volume in gallons: ", ConvertToLiters, "gallons", "liters")
+		PerformConversion("Enter the volume in gallons: ", ConvertToLiters, "gallons", "liters")
 	case "2":
-		performConversion("Enter the volume in liters: ", ConvertToGallons, "liters", "gallons")
+		PerformConversion("Enter the volume in liters: ", ConvertToGallons, "liters", "gallons")
 	default:
 		fmt.Println("Invalid choice")
 	}
 }
 
-func lengthConversion() {
+func LengthConversion() {
 	fmt.Println("Please select an option:")
 	fmt.Println("1. Kilometers to Miles")
 	fmt.Println("2. Miles to Kilometers")
@@ -107,19 +107,19 @@ func lengthConversion() {
 
 	switch choice {
 	case "1":
-		performConversion("Enter the distance in kilometers: ", ConvertToMiles, "kilometers", "miles")
+		PerformConversion("Enter the distance in kilometers: ", ConvertToMiles, "kilometers", "miles")
 	case "2":
-		performConversion("Enter the distance in miles: ", ConvertToKilometers, "miles", "kilometers")
+		PerformConversion("Enter the distance in miles: ", ConvertToKilometers, "miles", "kilometers")
 	case "3":
-		performConversion("Enter the length in centimeters: ", ConvertToInches, "centimeters", "inches")
+		PerformConversion("Enter the length in centimeters: ", ConvertToInches, "centimeters", "inches")
 	case "4":
-		performConversion("Enter the length in inches: ", ConvertToCentimeters, "inches", "centimeters")
+		PerformConversion("Enter the length in inches: ", ConvertToCentimeters, "inches", "centimeters")
 	default:
 		fmt.Println("Invalid choice")
 	}
 }
 
-func temperatureConversion() {
+func TemperatureConversion() {
 	fmt.Println("Please select an option:")
 	fmt.Println("1. Fahrenheit to Celsius")
 	fmt.Println("2. Celsius to Fahrenheit")
@@ -128,9 +128,9 @@ func temperatureConversion() {
 
 	switch choice {
 	case "1":
-		performConversion("Enter the temperature in Fahrenheit: ", ConvertToCelsius, "Fahrenheit", "Celsius")
+		PerformConversion("Enter the temperature in Fahrenheit: ", ConvertToCelsius, "Fahrenheit", "Celsius")
 	case "2":
-		performConversion("Enter the temperature in Celsius: ", ConvertToFahrenheit, "Celsius", "Fahrenheit")
+		PerformConversion("Enter the temperature in Celsius: ", ConvertToFahrenheit, "Celsius", "Fahrenheit")
 	default:
 		fmt.Println("Invalid choice")
 	}
