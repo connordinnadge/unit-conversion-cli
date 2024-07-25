@@ -20,3 +20,7 @@ func DisplayMainMenu() string {
 	choice := GetUserInput("Enter your choice: ")
 	return choice
 }
+
+func DisplayResult(fromValue float64, fromUnit string, toValue float64, toUnit string) {
+	fmt.Printf("%v %s is %v %s\n", fromValue, fromUnit, toValue, toUnit)
+}
