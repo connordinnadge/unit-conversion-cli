@@ -33,7 +33,7 @@ func performConversion(prompt string, conversionFunc func(float64) float64, inpu
 		return
 	}
 	result := conversionFunc(value)
-	fmt.Printf("%v %s is %v %s\n", value, inputUnit, result, outputUnit)
+	ui.DisplayResult(value, inputUnit, result, outputUnit)
 }
 
 func weightConversion() {
